@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="welcome.css">
+    <title>5x6 Tic Tac Toe</title>
+</head>
+<body>
+    <p style="font-size: 40px;">WELCOME TO</p>
+    <p class="title" style="font-size: 80px;">Tic Tac Toe</p>
+    <p style="font-size: 25px;">Choose your opponent</p>
+    <div style="padding-left: 30px;">   
+        <a href="human.html" id="vsHumanButton">Human</a>
+        <a href="ai.html" id="vsAIButton">AI</a>
+    </div>
+
+    <div class="footer">
+        <span>Carandang</span>
+        <span>Choa</span>
+        <span>Colaja</span>
+        <span>Fabregas</span>
+        <span>Farala</span>
+    </div>
+    <img src="music.png" id="musicButton" class="music-button" alt="Music Button">
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const musicButton = document.getElementById('musicButton');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+
+        // Play the background music automatically when the page loads
+        window.addEventListener('load', function() {
+            backgroundMusic.play();
+        });
+
+        musicButton.addEventListener('click', function() {
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+                musicButton.src = 'music.png';
+            } else {
+                backgroundMusic.pause();
+                musicButton.src = 'mute.png';
+            }
+        });
+    </script>
+</body>
+</html>
